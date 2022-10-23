@@ -1,5 +1,5 @@
-module com.github.pbbl {
-    exports com.github.pbbl;
-    exports com.github.pbbl.direct;
-    exports com.github.pbbl.heap;
+module com.arena_returns.pbbl {
+    exports com.arena_returns.pbbl;
+    exports com.arena_returns.pbbl.direct;
+    exports com.arena_returns.pbbl.heap;
 }

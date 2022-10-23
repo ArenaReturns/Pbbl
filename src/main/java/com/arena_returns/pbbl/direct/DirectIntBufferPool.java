@@ -21,24 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.github.pbbl.direct;
+package com.arena_returns.pbbl.direct;
 
-import com.github.pbbl.AbstractBufferPool;
+import com.arena_returns.pbbl.AbstractBufferPool;
 
 import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 
 /**
- * Represents a pool of direct {@link FloatBuffer} objects.
+ * Represents a pool of direct {@link IntBuffer} objects.
  *
  * @author Jacob G.
  * @since May 25, 2020
  */
-public final class DirectFloatBufferPool extends AbstractBufferPool<FloatBuffer> {
+public final class DirectIntBufferPool extends AbstractBufferPool<IntBuffer> {
 
     @Override
-    protected FloatBuffer allocate(int capacity) {
-        return ByteBuffer.allocateDirect(capacity << 2).asFloatBuffer();
+    protected IntBuffer allocate(int capacity) {
+        return ByteBuffer.allocateDirect(capacity << 2).asIntBuffer();
     }
 
     /**
@@ -47,9 +47,9 @@ public final class DirectFloatBufferPool extends AbstractBufferPool<FloatBuffer>
      * @throws IllegalArgumentException if {@code buffer} is not direct.
      */
     @Override
-    public void give(FloatBuffer buffer) {
+    public void give(IntBuffer buffer) {
         if (!buffer.isDirect()) {
-            throw new IllegalArgumentException("A non-direct FloatBuffer cannot be given to a DirectFloatBufferPool!");
+            throw new IllegalArgumentException("A non-direct IntBuffer cannot be given to a DirectIntBufferPool!");
         }
 
         super.give(buffer);

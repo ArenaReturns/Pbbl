@@ -1,3 +1,5 @@
+#### This is a fork of jhg023's Pbbl library tweaked for use in Arena Returns server engine.
+
 # Pbbl (pr. _pebble_, pɛbəl)
 A thread-safe [Buffer](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/Buffer.html) pool that allows for the automatic reuse of `Buffer` objects (including [`ByteBuffer`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/ByteBuffer.html), [`CharBuffer`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/CharBuffer.html), etc.), which can be over 30x faster than having to allocate a new `Buffer`.
 
@@ -7,21 +9,21 @@ A thread-safe [Buffer](https://docs.oracle.com/en/java/javase/14/docs/api/java.b
 Maven:
 ```xml
 <dependency>
-  <groupId>com.github.jhg023</groupId>
+  <groupId>com.arena_returns</groupId>
   <artifactId>Pbbl</artifactId>
   <version>1.0.2</version>
 </dependency>
 ```
 Gradle:
 ```groovy
-implementation 'com.github.jhg023:Pbbl:1.0.2'
+implementation 'com.arena_returns:Pbbl:1.0.2'
 ```
 
  2. Because Pbbl is compiled with Java 11, you must require its module in your `module-info.java`:
 
 ```java
 module my.project {
-    requires com.github.pbbl;
+    requires com.arena_returns.pbbl;
 }
 ```
 

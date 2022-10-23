@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.jhg023</groupId>
+    <groupId>com.arena_returns</groupId>
     <artifactId>Pbbl</artifactId>
     <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>Pbbl</name>
-    <description>A thread-safe Buffer pool that allows for the automatic reuse of Buffer objects (ByteBuffer,
+    <description>ArenaReturns' fork of Pbbl, a thread-safe Buffer pool that allows for the automatic reuse of Buffer objects (ByteBuffer,
         CharBuffer, etc.), which can be over 30x faster than allocating a new ByteBuffer when needed.</description>
-    <url>https://github.com/jhg023/Pbbl</url>
+    <url>https://github.com/ArenaReturns/Pbbl</url>
 
     <licenses>
         <license>
@@ -23,6 +23,12 @@
 
     <developers>
         <developer>
+            <name>Arena Returns</name>
+            <email>contact@arena-returns.com</email>
+            <organization>com.arena_returns</organization>
+            <organizationUrl>https://github.com/ArenaReturns/Pbbl</organizationUrl>
+        </developer>
+        <developer>
             <name>Jacob Glickman</name>
             <email>jhg023@bucknell.edu</email>
             <organization>com.github.jhg023</organization>
@@ -31,9 +37,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/jhg023/Pbbl.git</connection>
-        <developerConnection>scm:git:ssh://github.com:jhg023/Pbbl.git</developerConnection>
-        <url>https://github.com/jhg023/Pbbl</url>
+        <connection>scm:git:git://github.com/ArenaReturns/Pbbl.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ArenaReturns/Pbbl.git</developerConnection>
+        <url>https://github.com/ArenaReturns/Pbbl</url>
     </scm>
 
     <distributionManagement>
