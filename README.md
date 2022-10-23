@@ -9,14 +9,14 @@ A thread-safe [Buffer](https://docs.oracle.com/en/java/javase/14/docs/api/java.b
 Maven:
 ```xml
 <dependency>
-  <groupId>com.arena_returns</groupId>
+  <groupId>com.arena-returns</groupId>
   <artifactId>Pbbl</artifactId>
   <version>1.0.2</version>
 </dependency>
 ```
 Gradle:
 ```groovy
-implementation 'com.arena_returns:Pbbl:1.0.2'
+implementation 'com.arena-returns:Pbbl:1.0.2'
 ```
 
  2. Because Pbbl is compiled with Java 11, you must require its module in your `module-info.java`:
