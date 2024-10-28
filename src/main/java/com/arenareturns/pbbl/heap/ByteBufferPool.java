@@ -21,23 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.arena_returns.pbbl.heap;
+package com.arenareturns.pbbl.heap;
 
-import com.arena_returns.pbbl.AbstractBufferPool;
+import com.arenareturns.pbbl.AbstractBufferPool;
 
-import java.nio.ShortBuffer;
+import java.nio.ByteBuffer;
 
 /**
- * Represents a pool of non-direct {@link ShortBuffer} objects.
+ * Represents a pool of non-direct {@link ByteBuffer} objects.
  *
  * @author Jacob G.
- * @since May 25, 2020
+ * @since February 23, 2019
  */
-public final class ShortBufferPool extends AbstractBufferPool<ShortBuffer> {
-
+public final class ByteBufferPool extends AbstractBufferPool<ByteBuffer> {
+    
     @Override
-    protected ShortBuffer allocate(int capacity) {
-        return ShortBuffer.allocate(capacity);
+    protected ByteBuffer allocate(int capacity) {
+        return ByteBuffer.allocate(capacity);
     }
 
     /**
@@ -46,11 +46,11 @@ public final class ShortBufferPool extends AbstractBufferPool<ShortBuffer> {
      * @throws IllegalArgumentException if {@code buffer} is direct.
      */
     @Override
-    public void give(ShortBuffer buffer) {
+    public void give(ByteBuffer buffer) {
         if (buffer.isDirect()) {
-            throw new IllegalArgumentException("A direct ShortBuffer cannot be given to a ShortBufferPool!");
+            throw new IllegalArgumentException("A direct ByteBuffer cannot be given to a ByteBufferPool!");
         }
-
+        
         super.give(buffer);
     }
 }

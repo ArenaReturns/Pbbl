@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.arena_returns.pbbl.heap;
+package com.arenareturns.pbbl.heap;
 
-import com.arena_returns.pbbl.AbstractBufferPool;
+import com.arenareturns.pbbl.AbstractBufferPool;
 
 import java.nio.CharBuffer;
 

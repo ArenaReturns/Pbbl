@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.arena_returns.pbbl;
+package com.arenareturns.pbbl;
 
-import com.arena_returns.pbbl.heap.ByteBufferPool;
-import com.arena_returns.pbbl.heap.CharBufferPool;
+import com.arenareturns.pbbl.heap.ByteBufferPool;
+import com.arenareturns.pbbl.heap.CharBufferPool;
 
 import java.nio.Buffer;
 import java.util.ArrayDeque;

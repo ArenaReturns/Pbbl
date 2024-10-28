@@ -21,23 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.arena_returns.pbbl.heap;
+package com.arenareturns.pbbl.heap;
 
-import com.arena_returns.pbbl.AbstractBufferPool;
+import com.arenareturns.pbbl.AbstractBufferPool;
 
-import java.nio.FloatBuffer;
+import java.nio.LongBuffer;
 
 /**
- * Represents a pool of non-direct {@link FloatBuffer} objects.
+ * Represents a pool of non-direct {@link LongBuffer} objects.
  *
  * @author Jacob G.
  * @since May 25, 2020
  */
-public final class FloatBufferPool extends AbstractBufferPool<FloatBuffer> {
+public final class LongBufferPool extends AbstractBufferPool<LongBuffer> {
 
     @Override
-    protected FloatBuffer allocate(int capacity) {
-        return FloatBuffer.allocate(capacity);
+    protected LongBuffer allocate(int capacity) {
+        return LongBuffer.allocate(capacity);
     }
 
     /**
@@ -46,9 +46,9 @@ public final class FloatBufferPool extends AbstractBufferPool<FloatBuffer> {
      * @throws IllegalArgumentException if {@code buffer} is direct.
      */
     @Override
-    public void give(FloatBuffer buffer) {
+    public void give(LongBuffer buffer) {
         if (buffer.isDirect()) {
-            throw new IllegalArgumentException("A direct FloatBuffer cannot be given to a FloatBufferPool!");
+            throw new IllegalArgumentException("A direct LongBuffer cannot be given to a LongBufferPool!");
         }
 
         super.give(buffer);

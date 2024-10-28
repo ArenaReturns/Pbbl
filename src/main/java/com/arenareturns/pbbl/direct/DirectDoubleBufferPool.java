@@ -21,34 +21,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package com.arena_returns.pbbl.heap;
+package com.arenareturns.pbbl.direct;
 
-import com.arena_returns.pbbl.AbstractBufferPool;
+import com.arenareturns.pbbl.AbstractBufferPool;
 
+import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 
 /**
- * Represents a pool of non-direct {@link DoubleBuffer} objects.
+ * Represents a pool of direct {@link DoubleBuffer} objects.
  *
  * @author Jacob G.
  * @since May 25, 2020
  */
-public final class DoubleBufferPool extends AbstractBufferPool<DoubleBuffer> {
+public final class DirectDoubleBufferPool extends AbstractBufferPool<DoubleBuffer> {
 
     @Override
     protected DoubleBuffer allocate(int capacity) {
-        return DoubleBuffer.allocate(capacity);
+        return ByteBuffer.allocateDirect(capacity << 3).asDoubleBuffer();
     }
 
     /**
      * {@inheritDoc}
      *
-     * @throws IllegalArgumentException if {@code buffer} is direct.
+     * @throws IllegalArgumentException if {@code buffer} is not direct.
      */
     @Override
     public void give(DoubleBuffer buffer) {
-        if (buffer.isDirect()) {
-            throw new IllegalArgumentException("A direct DoubleBuffer cannot be given to a DoubleBufferPool!");
+        if (!buffer.isDirect()) {
+            throw new IllegalArgumentException("A non-direct DoubleBuffer cannot be given to a " +
+                "DirectDoubleBufferPool!");
         }
 
         super.give(buffer);
